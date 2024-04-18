@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#defaultLayout,
+#guestLayout {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #212121;
+  background-color: #f6f6f6;
+}
+
+input {
+  outline: 0;
+  background: #ffffff;
+  width: 100%;
+  border: 2px solid #e6e6e6;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+input:focus {
+  border-color: #5b08a7;
+}
+
+.btn,
+.btn-add,
+.btn-edit,
+.btn-delete {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #597FB1;
+  border: 0;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.btn-block {
+  height: 90px;
+  width: 100%;
+  font-family: alfaslabone;
+  letter-spacing: 2px;
+  font-size: 40px
+}
+
+.btn-add,
+.btn-edit,
+.btn-delete {
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.btn-add {
+  background-color: #00a762;
+}
+
+.btn-delete {
+  background-color: #b72424;
+}
+
+.btn-logout {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  color: #212121;
+  transition: all 0.3s;
+  border-radius: 6px;
+}
+
+.btn-logout:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background: #5b08a7;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table>thead>tr>th {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  background-color: #efefef;
+}
+
+table>tbody>tr>td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #efefef;
+  white-space: nowrap;
+}
+
+.card {
+  background-color: #FFF;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.alert {
+  padding: 1rem;
+  background-color: #ff4040;
+  color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.notification {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 100;
+  padding: 1rem 1.5rem;
+  background-color: #00a762;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+/* Login/Signup forms*/
+
+.login-signup-form {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-signup-form .form {
+  width: 360px;
+  position: relative;
+  z-index: 1;
+  background: #0C192A;
+  max-width: 360px;
+  padding: 34px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-signup-form .title {
+  font-size: 35px;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: alfaslabone;
+  letter-spacing: 2px;
+}
+
+.login-signup-form .form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form-input {
+  border-radius: 20px;
+}
+
+.login-signup-form .form .message a {
+  color: #5b08a7;
+  text-decoration: none;
+}
+
+/* Login/Signup form */
+
+
+#defaultLayout {
+  display: flex;
+}
+
+#defaultLayout aside {
+  width: 240px;
+  background-color: #5b08a7;
+  padding: 1rem
+}
+
+#defaultLayout aside>a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+#defaultLayout aside>a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#defaultLayout .content {
+  flex: 1;
+}
+
+#defaultLayout header {
+  height: 80px;
+  padding: 2rem 3rem;
+  background-color: white;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#defaultLayout main {
+  padding: 2rem;
+}
+
+.animated {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homeNavBar {
+  display: flex;
+  width: 100%;
+  height: 161px;
+  background: #0D3972;
+  border-bottom: 3px solid black;
+}
+
+.homeNavBar img {
+  width: 118px;
+  height: 139px;
+  margin-right: 25px;
+  margin-top: 10px;
+
+}
+
+@font-face {
+  font-family: alfaslabone;
+  src: url(./assets/alfaslabone.ttf);
+}
+
+@font-face {
+  font-family: antonio;
+  src: url(./assets/antonio.ttf);
+}
+
+.navBarSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-family: alfaslabone;
+}
+
+.navBarSection span {
+  /* Optional: wrap text in a span for better styling */
+  text-align: center;
+}
+
+.activesection {
+  color: #FDAE15;
+  text-decoration: none;
+}
+
+.notactivesection {
+  color: white;
+  text-decoration: none;
+}
+
+.homePages {
+  background-color: #0C192A;
+}
+
+.row {
+  display: flex;
+  /* Make the row a flex container */
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next line if needed */
+}
+
+.column {
+  flex: 1;
+  /* Make each column take up equal space (can be adjusted) */
+  /* Add some padding for spacing */
+  /* Optional: Add border for visual separation (uncomment if desired) */
+  /* border: 1px solid #ddd; */
+}
+
+.mainPageLogo {
+  width: 570px;
+}
+
+.mainPageTitle {
+  color: white;
+  font-size: 65px;
+  font-family: alfaslabone;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin-left: -130px;
+}
+
+.ranked-wrapper {
+  margin-top: 40px;
+  width: 434px;
+  height: 213px;
+  position: relative;
+}
+
+.medal {
+  width: 213px;
+  height: 213px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: linear-gradient(123deg, #FF0909 0%, #AD00FF 51%, #1939E2 100%);
+  border-radius: 9999px;
+  border: 5px solid black;
+}
+
+.medal2 {
+  background: linear-gradient(124deg, #095CFF 0%, #00FFFF 51%, #047D09 100%);
+  width: 213px;
+  height: 213px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  border-radius: 9999px;
+  border: 5px solid black;
+}
+
+
+.rankedText {
+  width: 187px;
+  left: 13px;
+  top: 24px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: antonio;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.rankedText2 {
+  width: 187px;
+  left: 13px;
+  top: 24px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  font-family: antonio;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.sponsor_logo {
+  width: 198px;
+  left: 236px;
+  top: 53px;
+  position: absolute;
+}
+
+.sponsor_logo2 {
+  height: 97px;
+  left: 236px;
+  top: 75px;
+  position: absolute;
+  filter: invert(1)
+}
+
+.loginFormdiv {
+  right: 250px;
+}
+
+.title {
+  font-family: alfaslabone;
+  font-size: 50px;
+  color: white;
+  letter-spacing: 2px;
+  margin: 30px;
+}
+
+.presentationText {
+  font-family: alfaslabone;
+  letter-spacing: 2px;
+  font-size: 30px;
+  color: white;
+  margin-left: 34px;
+  width: 700px;
+}
+
+
+.footer-wrapper {
+  margin-bottom: -1px;
+}
+
+.company-logo {
+  width: 51px;
+  height: 51px;
+}
+
+.athena-logo {
+  width: 96.81px;
+  height: 114px;
+}
+
+.footer-text {
+  color: #686363;
+  font-size: 14px;
+  font-family: Alfa Slab One;
+  font-weight: 400;
+  word-wrap: break-word;
+  left: 116px;
+  top: 0;
+}
+
+.collaboration-text {
+  color: #686363;
+  font-size: 14px;
+  font-family: Alfa Slab One;
+  font-weight: 400;
+}
