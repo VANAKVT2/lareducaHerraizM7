@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { createRef, useState, useRef } from "react";
 import axiosClient from "../axios-client.js";
 import { useStateContext } from "../contexts/ContextProvider.jsx";
-export default function SignupForm() {
 
+export default function SignupForm() {
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -18,35 +18,33 @@ export default function SignupForm() {
         const payload = {
             name: nameRef.current.value,
             email: emailRef.current.value,
+            user_type: 1, // Use the value directly in the payload
             password: passwordRef.current.value,
             password_confirmation: passwordConfirmationRef.current.value
-        }
-        let dataSaver;
+        };
+
         axiosClient.post('/signup', payload)
             .then(({ data }) => {
-                console.log("DATA:" , data)
-                dataSaver = data;
-                setUser(data.user)
-                setToken(data.token)
-                localStorage.setItem('token', data.token)
-                window.location.href = '/main'
+                console.log("DATA:", data);
+                setUser(data.user);
+                setToken(data.token);
+                localStorage.setItem('token', data.token);
+                window.location.href = '/dashboard';
             }).catch(err => {
-                const response = err.response
-                if (response && response.status === 422 || response.status === 500) {
-                    console.log("DATA SENT WAS: ");
-                    console.log(dataSaver);
-                    console.log("ERRORS: ");
-                    console.log(response.data.errors);
-                    setErrors(response.data.errors)
-                    console.log(payload)
+                const response = err.response;
+                if (response && (response.status === 422 || response.status === 500)) {
+                    console.log("DATA SENT WAS: ", payload);
+                    console.log("ERRORS: ", response.data.errors);
+                    setErrors(response.data.errors);
                 }
-            })
-    }
+            });
+    };
+
     return (
         <div className="login-signup-form animated fadeInDown">
             <div className="form">
                 <form onSubmit={onSubmit}>
-                    <h1 className="title" style={{textAlign:"center", margin:"0px", marginLeft:"-5px"}}>
+                    <h1 className="title" style={{ textAlign: "center", margin: "0px", marginLeft: "-5px" }}>
                         ENROLLMENT FORM
                     </h1>
                     {errors &&
@@ -67,5 +65,5 @@ export default function SignupForm() {
                 </form>
             </div>
         </div>
-    )
+    );
 }

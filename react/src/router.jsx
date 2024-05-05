@@ -12,6 +12,7 @@ import WhyAthena from "./views/WhyAthena";
 import OurCampuses from "./views/OurCampuses";
 import StudyInAthena from "./views/StudyInAthena";
 import VirtualCampus from "./views/VirtualCampus";
+import UserForm from "./views/UserForm";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,14 @@ const router = createBrowserRouter([
             {
                 path: "/users",
                 element: <Users />
+            },
+            {
+                path: "/users/new",
+                element: <UserForm key="userCreate" />
+            },
+            {
+                path: "/users/:id",
+                element: <UserForm key="userUpdate" />
             },
             {
                 path: "/dashboard",

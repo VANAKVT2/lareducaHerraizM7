@@ -22,7 +22,6 @@ export default function HomePageNavbar() {
                 <div className={`navBarSection`}><Link to={"/virtualcampus"} className={`${currentRoute === "/virtualcampus" ? "activesection" : "notactivesection"}`}>VIRTUAL<br />CAMPUS</Link></div>
                 <Link to={"/main"}><img src="/imgs/logoNavbarHome.png" alt="placeholder" /></Link>
             </div>
-
         </div>
     );
 }

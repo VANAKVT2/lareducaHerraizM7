@@ -1,13 +1,13 @@
 export default function HomePageFooter() {
     return (
         <div>
-            <div class="footer-wrapper">
-                <div className="row">
-                    <div className="col">
-                        <img class="athena-logo" src="https://via.placeholder.com/97x114" alt="Athena Logo" />
+            <div className="grid grid-cols-10 gap">
+                <div className="columns-2 w-[300px] gap-1">
+                    <div className="w-full">
+                        <img className="athena-logo" src="imgs/logoMainHome.png" alt="Athena Logo" />
                     </div>
-                    <div className="col">
-                        <div class="footer-text">
+                    <div className="ml-[-50px]">
+                        <div className="footer-text">
                             ATHENA<br />
                             INTERNATIONAL<br />
                             UNIVERSITY<br />
@@ -16,31 +16,47 @@ export default function HomePageFooter() {
                             2024 RIGHTS RESERVED
                         </div>
                     </div>
-                    <div className="col">
-                        <div class="collaboration-text">IN COLLABORATION WITH:</div>
+                </div>
+                <div className="collaboration-text ml-12 w-full">IN COLLABORATION WITH:</div>
+                <div className="columns-2 w-36 ml-12">
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiucvidalbarraquer.png" alt="Company Logo 1" />
                     </div>
-                    <div className="col logodivFooter">
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 1" />
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 2" />
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiuccirera.png" alt="Company Logo 2" />
                     </div>
-                    <div className="col logodivFooter">
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 1" />
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 2" />
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiucpoblenou.png" alt="Company Logo 2" />
                     </div>
-                    <div className="col logodivFooter">
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 1" />
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 2" />
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiucwtc.png" alt="Company Logo 2" />
                     </div>
-                    <div className="col logodivFooter">
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 1" />
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 2" />
+                </div>
+                <div className="columns-2 w-36 ml-5">
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiucbellisens.png" alt="Company Logo 2" />
                     </div>
-                    <div className="col logodivFooter">
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 1" />
-                        <img class="company-logo" src="https://via.placeholder.com/51x51" alt="Company Logo 2" />
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiuccet.png" alt="Company Logo 2" />
+                    </div>
+                    <div className="">
+                        <img className="company-logo" src="imgs/aiucgorg.png" alt="Company Logo 2" />
+                    </div>
+                    <div className="">
+                        <img className="company-logo" src="imgs/urv-logo.png" alt="Company Logo 2" />
+                    </div>
+                </div>
+                <div className="ml-[-10px]">
+                    <div className="">
+                    <img className="company-logo" src="imgs/upf-logo.png" alt="Company Logo 2" />
+                    </div>
+                    <div className="">
+                    <img className="company-logo2" src="imgs/monlau-logo.png" alt="Company Logo 2" />
                     </div>
                 </div>
             </div>
         </div>
+
+
     )
 }
