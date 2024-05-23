@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Curso extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $table = 'cursos';
     protected $primaryKey = 'id_curso';
 

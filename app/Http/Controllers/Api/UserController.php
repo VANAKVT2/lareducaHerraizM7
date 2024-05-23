@@ -7,7 +7,8 @@ use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
-use GuzzleHttp\Psr7\Response;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -70,5 +71,41 @@ class UserController extends Controller
     {
         $user->delete();
         return response("", 204);
+    }
+
+    /**
+     * Update user's game score.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function puntuarJuego(Request $request)
+    {
+        $puntuacion = $request->input('puntuacion');
+        $id_usuario = $request->input('id_usuario');
+        $nombre_juego = $request->input('nombre_juego');
+
+        Log::info("JAJJAJAJAJ REQUEST JAJAJ: ", $request->all());
+
+        $mysqli = new \mysqli("localhost", "root", "", "lareduca");
+        switch ($nombre_juego) {
+            case "piano":
+                $sql = "UPDATE users SET puntuacion_piano = ? WHERE id = ?";
+                $stmt = $mysqli->prepare($sql);
+                $stmt->bind_param("ii", $puntuacion, $id_usuario);
+                $stmt->execute();
+                $stmt->close();
+                $mysqli->close();
+                break;
+            case "ahorcado":
+                $sql = "UPDATE users SET puntuacion_ahorcado = ? WHERE id = ?";
+                $stmt = $mysqli->prepare($sql);
+                $stmt->bind_param("ii", $puntuacion, $id_usuario);
+                $stmt->execute();
+                $stmt->close();
+                $mysqli->close();
+                break;
+        }
+
+        return response("Score updated", 200);
     }
 }

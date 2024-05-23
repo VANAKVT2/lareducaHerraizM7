@@ -1,5 +1,5 @@
-import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosClient from "../axios-client.js";
 import { useStateContext } from "../contexts/ContextProvider.jsx";
 
@@ -23,6 +23,7 @@ export default function UserForm() {
             setLoading(true)
             axiosClient.get(`/users/${id}`)
                 .then(({ data }) => {
+                    console.log("A CHUPARLAAAA")
                     setLoading(false)
                     setUser(data)
                 })
@@ -85,9 +86,9 @@ export default function UserForm() {
                         <input type="password" onChange={ev => setUser({ ...user, password: ev.target.value })} placeholder="Contraseña" />
                         <input type="password" onChange={ev => setUser({ ...user, password_confirmation: ev.target.value })} placeholder="Confimar contraseña" />
                         <select value={user.user_type} onChange={ev => setUser({ ...user, user_type: parseInt(ev.target.value) })}>
-                            <option value="1">Alumno</option>
-                            <option value="2">Profesor</option>
-                            <option value="3">Admin</option>
+                            <option value="0">Alumno</option>
+                            <option value="1">Profesor</option>
+                            <option value="2">Admin</option>
                         </select>
                         <button className="btn">Guardar</button>
                     </form>

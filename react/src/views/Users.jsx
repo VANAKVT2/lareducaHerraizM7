@@ -82,10 +82,10 @@ export default function Users() {
                         </tbody>}
                 </table>
             </div>
-            <div className="pagination">
+            <div className="pagination w-full">
                 {pages && pages.links.map((link, index) => (
                     <button
-                        className={`btn ${link.active ? 'active' : ''}`}
+                        className={`btn ${link.active ? 'active' : ''} w-1/${pages.links.length}`}
                         key={index}
                         onClick={() => getUsers(new URL(link.url).searchParams.get('page'))}
                         disabled={link.url === null}

@@ -33,7 +33,7 @@ class StoreUserRequest extends FormRequest
                     ->letters()
                     ->symbols(),
             ],
-            'user_type' => 'required|integer|in:1,2,3',
+            'user_type' => 'required|integer|in:0,1,2',
         ];
     }
 }

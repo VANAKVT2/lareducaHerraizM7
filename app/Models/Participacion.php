@@ -12,6 +12,8 @@ class Participacion extends Model
     protected $table = 'participacion';
     public $incrementing = false;
     public $timestamps = false;
+    protected $primaryKey = 'id_curso';
+    
 
     protected $fillable = [
         'id_usuario',

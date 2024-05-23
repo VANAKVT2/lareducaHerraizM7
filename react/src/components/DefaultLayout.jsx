@@ -1,7 +1,7 @@
-import { Link, Navigate, Outlet } from "react-router-dom";
-import { useStateContext } from "../contexts/ContextProvider.jsx";
-import axiosClient from "../axios-client.js";
 import { useEffect } from "react";
+import { Link, Navigate, Outlet } from "react-router-dom";
+import axiosClient from "../axios-client.js";
+import { useStateContext } from "../contexts/ContextProvider.jsx";
 
 export default function DefaultLayout() {
     const { user, token, setUser, setToken, notification } = useStateContext();
@@ -21,6 +21,7 @@ export default function DefaultLayout() {
                 setUser(data)
             })
     }, [])
+
     if (!token) {
         return <Navigate to="/login" />
     } else {
@@ -28,17 +29,23 @@ export default function DefaultLayout() {
             <div id="defaultLayout">
                 <aside>
                     <Link to="/dashboard">Dashboard</Link>
-                    <Link to="/users">Users</Link>
+                    {((user.user_type === 1) || (user.user_type === 2)) && (
+                        <>
+                            <Link to="/users">Users</Link>
+                            <Link to="/courses">Courses</Link>
+                        </>
+                    )}
+                    {user.user_type === 0 && (
+                        <>
+                            <Link to="/games">Games</Link>
+                        </>
+                    )}
+
                 </aside>
                 <div className="content">
                     <header>
-                        <div>
-                            Header
-                        </div>
-
-                        <div>
-                            {user.name} &nbsp; &nbsp;
-                            <a onClick={onLogout} className="btn-logout" href="#">Logout</a>
+                        <div className="">
+                            <a onClick={onLogout} className="btn-delete btn-logout" href="#">Logout</a>
                         </div>
                     </header>
                     <main>

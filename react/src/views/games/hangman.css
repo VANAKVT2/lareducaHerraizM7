@@ -1,0 +1,38 @@
+.Hangman {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.word {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.letter {
+    margin: 0 5px;
+}
+
+.revealed {
+    color: green;
+}
+
+.incorrect-guesses {
+    margin-bottom: 20px;
+}
+
+.mistakes {
+    margin-bottom: 20px;
+}
+
+.keyboard button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.game-over,
+.victory {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}

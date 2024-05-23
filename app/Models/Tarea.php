@@ -18,7 +18,6 @@ class Tarea extends Model
         'puntuacion_maxima',
         'fecha_inicio',
         'fecha_final',
-        'parcial_entrega',
     ];
 
     public function curso()

@@ -32,7 +32,7 @@ body {
   padding: 0;
   font-size: 14px;
   color: #212121;
-  background-color: #f6f6f6;
+  background-color: #0c192a;
 }
 
 input {
@@ -229,7 +229,7 @@ table>tbody>tr>td {
 
 #defaultLayout aside {
   width: 240px;
-  background-color: #5b08a7;
+  background-color: #0D3972;
   padding: 1rem
 }
 
@@ -253,8 +253,8 @@ table>tbody>tr>td {
 #defaultLayout header {
   height: 80px;
   padding: 2rem 3rem;
-  background-color: white;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #0D3972;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -312,6 +312,11 @@ table>tbody>tr>td {
 @font-face {
   font-family: antonio;
   src: url(./assets/antonio.ttf);
+}
+
+@font-face {
+  font-family: batarang;
+  src: url(./assets/batarang.ttf);
 }
 
 .navBarSection {
@@ -455,6 +460,22 @@ table>tbody>tr>td {
   margin: 30px;
 }
 
+.subtitle {
+  font-family: alfaslabone;
+  font-size: 32px;
+  color: #FDAE15;
+  letter-spacing: 2px;
+  margin: 30px;
+}
+
+.subtitle2 {
+  font-family: alfaslabone;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 4px;
+  margin: 30px;
+}
+
 .presentationText {
   font-family: alfaslabone;
   letter-spacing: 2px;
@@ -511,4 +532,124 @@ table>tbody>tr>td {
   border-radius: 20px;
   height: 70px;
   background-color: yellow;
+}
+
+.WhyAthena {
+  font-family: alfaslabone;
+}
+
+.pilar_text_mark {
+  @apply h-32 w-32;
+  margin: 0 auto;
+}
+
+.images_container div {
+  @apply gap-4 mt-12;
+}
+
+.img_right {
+  @apply mb-12 w-[1500px] float-right;
+}
+
+.img_left {
+  @apply mb-12 mt-12 w-[1500px] h-full;
+}
+
+.logo_left {
+  @apply w-12 h-12 mt-96;
+}
+
+.logo_right {
+  @apply w-12 h-12 m-12;
+}
+
+.courseCard :hover {
+  cursor: pointer;
+}
+
+.formTareas {
+  color: white;
+}
+
+.Hangman {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  color: white
+}
+
+.word {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.letter {
+  margin: 0 5px;
+}
+
+.revealed {
+  color: green;
+}
+
+.incorrect-guesses {
+  margin-bottom: 20px;
+}
+
+.mistakes {
+  margin-bottom: 20px;
+}
+
+.keyboard button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #FDAE15;
+  border-radius: 12px;
+}
+
+
+.keyboard :disabled {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #0D3972;
+  border-radius: 12px;
+}
+
+.game-over,
+.victory {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.piano_sequence {
+  @apply text-4xl font-bold my-4 text-center text-white;
+}
+
+.piano_correct {
+  color: green
+}
+
+.piano_score {
+  margin: 0 auto;
+}
+
+.piano_bar {
+  margin: -2px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: #0D3972;
+}
+
+.virtual-keyboard button:focus {
+  @apply bg-yellow-400;
+  box-shadow: inset 0px 5px 14px 0 black;
+}
+
+.virtual-keyboard button_key {
+  box-shadow: inset 0px 5px 14px 0 black;
+  @apply bg-yellow-400;
 }
